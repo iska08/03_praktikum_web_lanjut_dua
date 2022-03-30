@@ -21,12 +21,15 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/about.html', function () {
+Route::get('/about', function () {
     return view('about');
 });
-Route::get('/post.html', function () {
+Route::get('/post', function () {
     return view('post');
 });
-Route::get('/contact.html', function () {
+Route::get('/contact', function () {
     return view('contact');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
